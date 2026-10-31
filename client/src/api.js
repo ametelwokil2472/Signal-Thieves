@@ -1,0 +1,1 @@
+export async function game(action,session={},data){const response=await fetch('/.netlify/functions/game',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,...session,data})});const result=await response.json();if(!result.ok)throw Error(result.error||'Request failed');return result;}
